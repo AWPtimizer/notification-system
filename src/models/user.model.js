@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { v4: uuidv4 } = require('uuid');
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
   id: {
     type: String,
     default: uuidv4
