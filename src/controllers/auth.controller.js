@@ -1,6 +1,6 @@
 // controllers/auth.controller.js
 const User = require("../models/user.model");
-const asyncHandler = require("../utils/asyncHandler");
+const {asyncHandler} = require("../utils/asyncHandler");
 
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -36,7 +36,6 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 
   const loggedInUser = user.select("-password")
-
   const token = user.generateAuthToken();
   res.status(200).json({message: "Logged in successfully"},{ loggedInUser, token });
 });

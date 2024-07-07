@@ -3,6 +3,7 @@ const http = require('http');
 
 const connectDB = require('./db/index');
 const { app } = require('./app');
+const { connectRabbitMQ } = require('./utils/rabbitmq');
 
 dotenv.config({
   path: './.env'
